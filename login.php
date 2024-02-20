@@ -6,10 +6,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST["username"];
     $password = $_POST["password"];
 
-    // Подготовка SQL-запроса
     $sql = "SELECT IIN FROM users WHERE IIN = '$username' AND password = '$password'";
 
-    // Выполнение запроса
     $result = $conn->query($sql);
 
     // Проверка результата запроса
@@ -28,11 +26,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION["isAdmin"] = true;
         }
 
-        // Перенаправление на личный кабинет
         header("Location: cabinet.php");
         exit();
     } else {
-        // Неудачная авторизация
         $error_message = "Неверные учетные данные. Пожалуйста, проверьте свой логин и пароль.";
     }
 }
@@ -60,16 +56,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </header>
 
     <div class="form-container">
-    <form action="login.php" method="post">
+    <form action="login.php" method="post
         <label for="username">ИИН пользователя:</label>
-        <input type="text" id="username" name="username" required>
+        <input type="text" id="username" name="username" placeholder="Write IIN here" required>
 
         <label for="password">Пароль:</label>
-        <input type="password" id="password" name="password" required>
+        <input type="password" id="password" name="password"  placeholder="Write password here" required>
 
         <button type="submit">Войти</button>
 
         <a class="register-link" href="register.php">Зарегистрироваться</a>
+        <a class="reset-link" href="passwordRecovery.php">Забыли пароль?</a>
     </form>
     </div>
 

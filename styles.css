@@ -53,6 +53,11 @@ a {
     display: block;
     margin-top: 15px;
 }
+.reset-link{
+    display: block;
+    margin-top: 30px;
+    text-align: right;
+}
 
 .success-message {
     border: 1px solid #4CAF50;
@@ -60,6 +65,12 @@ a {
     padding: 10px;
     background-color: #e7f6e7;
     color: #4CAF50;
+}
+h1{
+    text-align:center;
+}
+h3{
+    text-align: center;
 }
 
 .error-message {
@@ -119,4 +130,5 @@ footer {
 .form-container {
     max-height: 80vh;
     overflow-y: auto;
+    margin: 0 auto;
 }
